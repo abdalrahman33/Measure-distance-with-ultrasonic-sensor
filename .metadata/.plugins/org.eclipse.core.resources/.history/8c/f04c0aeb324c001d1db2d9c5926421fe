@@ -1,0 +1,29 @@
+
+ // application.c
+
+ // Created on: Oct 14, 2022
+ //      Author: Omar ELtoutongy
+
+
+#include "lcd.h"
+#include "icu.h"
+#include <avr/io.h> /* To use the SREG register */
+#include "ultrasonic.h"
+#include "std_types.h"
+
+int main(void)
+{
+	/* Enable Global Interrupt I-Bit */
+	SREG |= (1<<7);
+	Ultrasonic_init();
+	LCD_init();
+
+	for(;;)
+	{
+		 Ultrasonic_Trigger();
+		 LCD_displayString("Distance=    CM");
+		 uint16 reading = Ultrasonic_readDistance();
+		 LCD_moveCursor(0,9);
+		 LCD_intgerToString(reading);
+	}
+}

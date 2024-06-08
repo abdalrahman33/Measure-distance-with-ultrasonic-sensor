@@ -1,0 +1,33 @@
+/*
+ * ultrasonic.h
+ *
+ *  Created on: Oct 14, 2022
+ *      Author: omare
+ */
+
+#ifndef ULTRASONIC_H_
+#define ULTRASONIC_H_
+
+#include "std_types.h"
+
+
+/*******************************************************************************
+ *                                Definitions                                  *
+ *******************************************************************************/
+#define TRIGGER_PIN_PORT_ID		PORTB_ID
+#define TRIGGER_PIN_PIN_ID		PIN5_ID
+
+/*******************************************************************************
+ *                      Functions Prototypes                                   *
+ *******************************************************************************/
+
+void Ultrasonic_init(void);
+
+void Ultrasonic_Trigger(void);
+
+uint16 Ultrasonic_readDistance(void);
+
+void Ultrasonic_edgeProcessing(void);
+
+
+#endif /* ULTRASONIC_H_ */

@@ -1,0 +1,33 @@
+/*
+ * ultrasonic.c
+ *
+ *  Created on: Oct 14, 2022
+ *      Author: Omar Eltoutongy
+ */
+#include <avr/io.h>
+#include "ultrasonic.h"
+#include "gpio.h"
+
+/*******************************************************************************
+ *                      Functions Definitions                                  *
+ *******************************************************************************/
+
+void Ultrasonic_init(void)
+{
+	Icu_init(F_CPU_8,RISING);
+}
+
+void Ultrasonic_Trigger(void)
+{
+
+}
+
+uint16 Ultrasonic_readDistance(void)
+{
+
+}
+
+void Ultrasonic_edgeProcessing(void)
+{
+
+}

@@ -1,0 +1,12 @@
+/*
+ * application.c
+ *
+ *  Created on: Oct 14, 2022
+ *      Author: omare
+ */
+
+
+#include "lcd.h"
+#include "icu.h"
+#include <avr/io.h> /* To use the SREG register */
+#include "gpio.h"

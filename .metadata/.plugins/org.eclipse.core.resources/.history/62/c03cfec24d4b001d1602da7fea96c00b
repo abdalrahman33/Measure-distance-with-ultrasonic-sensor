@@ -1,0 +1,26 @@
+/*
+ * application.c
+ *
+ *  Created on: Oct 14, 2022
+ *      Author: omare
+ */
+
+
+#include "lcd.h"
+#include "icu.h"
+#include <avr/io.h> /* To use the SREG register */
+#include "gpio.h"
+
+int main(void)
+{
+	/* Enable Global Interrupt I-Bit */
+	SREG |= (1<<7);
+	Ultrasonic_init();
+	LCD_init();
+	Icu_setCallBack(APP_edgeProcessing);
+
+	for(;;)
+	{
+
+	}
+}
